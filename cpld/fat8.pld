@@ -1,0 +1,168 @@
+Name     fat8;
+PartNo   00 ;
+Date     1/25/2025 ;
+Revision 01 ;
+Designer jim kearney;
+Company  fat8@kearney.dev ;
+Assembly None ;
+Location  ;
+Device f1504isptqfp100;
+
+property ATMEL { preassign = TRY };
+property ATMEL { jtag = on };
+property ATMEL { TDI_pullup = on };
+property ATMEL { TMS_pullup = on };
+/*property ATMEL { power_reset = on };*/
+
+/***** external signals */
+
+/* reset button */
+pin 9 = !reset;
+/* bank config (stored in USB interface) */
+pin [85,75] = [cfg1in,cfg0in];
+/* serial (to/from USB interface) */
+pin [69,71] = [rxd,txd];
+
+/* clocks and control signals */
+/*  3MHz from USB */
+pin 87 = clk3Mhz;
+/*  8008 signals */
+pin [83,92,97,99,6,76,80,94] = [ph1out,ph2out,s0in,s1in,s2in,int,rdy,sync];
+
+/* bidirectional data bus */
+pin [8,100,98,96,93,84,81,79] = [d0..7];
+
+/* Expansion connector */
+/*  I/O port strobes */
+pin [10,12,13,14,16,17] = [pi2,pi3,pi4,po12,po13,po14];
+/*  d0-7 strobes: latch data, write valid */
+pin [19,20] = [st1,st3];
+
+/* FRAM address and control */
+pin [68,67,65,64,63,61,60,58] = [addr0..7];
+pin [48,47,44,46,57,52] = [addr8..13];
+pin [56] = addr14out;
+pin 54 = !fram_wr;
+pin 45 = !fram_oe;
+pin 42 = !fram_ce;
+
+/* test points */
+pin [35,36,37] = [debug1,debug2,debug3];
+
+/***** end of external signals */
+
+/***** internal signals */
+node poweronreset;
+node cff1, cff2, cff3, cff4, div3;
+node t1, t2, st2, t3;
+node cc1, cc2, pcir, pcw, pcc;
+node pi0, pi1, po10, po11;
+node ser_out, wren_out, write_enabled;
+node [wren0..7];
+/***** end of internal signals */
+
+/* 8008 I/O port reservations */
+SERINPP = pi0;	/* serial in (d0) */
+SEROUTP = po10;	/* serial out (d0) */
+WRENINPP = pi1;	/* write enable in (d0-7) */
+WRENOUTP = po11;	/* write enable out (d0-7) */
+
+/* everyone is faster than the CPU */
+rdy = 'b'1;
+
+/* clock generator - 3MHz to 2 out-of-phase 25%
+ * duty cycle 500KHz clocks */
+cff1.ckmux = clk3Mhz;
+cff2.ckmux = clk3Mhz;
+cff3.ckmux = clk3Mhz;
+cff4.ckmux = clk3Mhz;
+div3 = !cff1 & cff2;
+cff1.t = !div3;
+cff2.t = cff1 # div3;
+cff3.t = div3;
+cff4.t = cff3 & div3;
+ph1out = !cff3 & !cff4;
+ph2out = !cff3 &  cff4;
+
+/* state decoding */
+t1   = !s2in &  s1in & !s0in;
+t1i  =  s2in &  s1in & !s0in;
+t2   =  s2in & !s1in & !s0in;
+t3   = !s2in & !s1in &  s0in;
+st1  = ph2out & !sync & t1; 
+st1i = ph2out & !sync & t1i; 
+st2  = ph2out & !sync & t2;
+st3  = ph2out & !sync & t3;
+
+/* does the cpu seem to be running? */
+poweronreset.d = 'b'1;
+poweronreset.ckmux = st1i;
+
+/* reset button - registered */
+int.ckmux = clk3Mhz;
+int.d = !poweronreset # reset # (int & !st3);
+
+/* address/cc latches. reset to 0 when INT
+ * so that next insn is from 000:000 */
+/* latch low 8 address bits */
+[addr0..7].d = [d0..7];
+[addr0..7].ck = st1;
+/* latch high 6 address bits */
+[addr8..13].d = [d0..5];
+[addr8..13].ck = st2;
+/* clear address on reset */
+[addr0..13].ar = int;
+/* latch cycle type */
+[cc1,cc2].d = [d6,d7];
+[cc1,cc2].ck = st2;
+[cc1,cc2].ar = int;
+
+/* FRAM bank switching.  The FRAM has 32KB, the CPU addresses 16KB.
+ * Use the USB config to implement a persistent selection.
+ * cfg0in chooses one of two possibilities for low 8KB
+ * cfg1in chooses one of two possibilities for high 8KB */
+addr14out = (!addr13 & !cfg1in & cfg0in) # (cfg1in & !cfg0in) # (addr13 & cfg1in);
+
+/* Cycle decoding */
+pcir = t3        & !cc1; /* fetch insn or data */
+pcw  = t3 &  cc2 &  cc1; /* write data */
+pcc  = t3 & !cc2 &  cc1; /* I/O operation */
+
+/* FRAM strobes */
+fram_wr = pcw & st3 & write_enabled & !int;
+fram_oe = pcir;
+fram_ce = pcir # pcw;
+
+/* I/O port decodes */
+pi0  = pcc & !addr12 & !addr11 & !addr10 & !addr9;
+pi1  = pcc & !addr12 & !addr11 & !addr10 &  addr9;
+pi2  = pcc & !addr12 & !addr11 &  addr10 & !addr9;
+pi3  = pcc & !addr12 & !addr11 &  addr10 &  addr9;
+pi4  = pcc & !addr12 &  addr11 & !addr10 & !addr9;
+po10 = pcc &  addr12 & !addr11 & !addr10 & !addr9;
+po11 = pcc &  addr12 & !addr11 & !addr10 &  addr9;
+po12 = pcc &  addr12 & !addr11 &  addr10 & !addr9;
+po13 = pcc &  addr12 & !addr11 &  addr10 &  addr9;
+po14 = pcc &  addr12 &  addr11 & !addr10 & !addr9;
+
+/* latch write enable register */
+[wren0..7].d = [addr0..7];
+[wren0..7].ck = WRENOUTP;
+write_enabled = (!addr13 & !addr12 & !addr11 & wren0) #
+                (!addr13 & !addr12 &  addr11 & wren1) #
+                (!addr13 &  addr12 & !addr11 & wren2) #
+                (!addr13 &  addr12 &  addr11 & wren3) #
+                ( addr13 & !addr12 & !addr11 & wren4) #
+                ( addr13 & !addr12 &  addr11 & wren5) #
+                ( addr13 &  addr12 & !addr11 & wren6) #
+                ( addr13 &  addr12 &  addr11 & wren7);
+
+/* bit-bang serial on port 0 lsb */
+txd.d = addr0;     /* latch register data (put out as low addr) */
+txd.ck = SEROUTP;  /* on output strobe */
+
+/* data bus output: input ports 0 (serial) and 1 (write enables) */
+d0 = (SERINPP & rxd) # (WRENINPP & wren0);
+[d7..1] = [wren7..1];
+[d7..0].oe = pi0 # pi1;
+

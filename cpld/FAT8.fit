@@ -1,0 +1,761 @@
+Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Sun Feb 23 14:21:29 2025
+
+
+fit1504 C:\USERS\JIM\DOCUMENTS\FAT8.tt2 -CUPL -dev P1504T100 -JTAG ON
+
+
+****** Initial fitting strategy and property ******
+ Pla_in_file = FAT8.tt2
+ Pla_out_file = FAT8.tt3
+ Jedec_file = FAT8.jed
+ Vector_file = FAT8.tmv
+ verilog_file = FAT8.vt
+ Time_file = 
+ Log_file = FAT8.fit
+ err_file = 
+ Device_name = TQFP100
+ Module_name = 
+ Package_type = TQFP
+ Preassign_file = 
+ Property_file = 
+ Sleep_mode = 
+ Preassignment = 
+ Security_mode = OFF
+ Pin_keep_mode = ON
+ Dedicated_input_clock = 
+ Dedicated_input_reset = 
+ Dedicated_input_oe = 
+ supporter = CUPL
+ optimize = ON
+ Soft_buffer = 
+ Xor_synthesis = OFF
+ Foldback_logic =  on
+ Expander = 
+ Cascade_logic = OFF
+ Dedicated_input = 
+ Output_fast = OFF
+ *******************************
+ Power down pin 1 = OFF
+ Power down pin 2 = OFF
+ power_reset = OFF
+ JTAG = ON
+ TDI pullup = ON
+ TMS pullup = ON
+ MC_power = OFF
+ Open_collector = OFF
+ ITD0 = ON
+ ITD1 = ON
+ ITD2 = ON
+ Fast_inlatch = off
+ *******************************
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+## ERROR : Bad user pin assignement : 111
+ ## ERROR : Bad user pin assignement 
+---------------------------------------------------------
+ Fitter_Pass 2, Preassign = KEEP, NODE ASSIGN : OFF 
+ ... 
+
+Performing global Output Enable pin assignments ...
+
+Performing global pin assignments ...
+--------------------------------------
+
+
+
+Final global control pins assignment (if applicable)...
+-------------------------------------------------------
+clk3Mhz assigned to pin  87
+
+
+
+Performing input pin pre-assignments ...
+------------------------------------
+clk3Mhz assigned to pin  87
+
+Attempt to place floating signals ...
+------------------------------------
+po12 is placed at pin 14 (MC 1)
+pi4 is placed at pin 13 (MC 2)
+pi3 is placed at pin 12 (MC 3)
+pi2 is placed at pin 10 (MC 4)
+reset is placed at pin 9 (MC 5)
+cff1 is placed at feedback node 605 (MC 5)
+d0 is placed at pin 8 (MC 6)
+s2in is placed at pin 6 (MC 7)
+cff4 is placed at feedback node 607 (MC 7)
+TDI is placed at pin 4 (MC 8)
+wren0 is placed at feedback node 608 (MC 8)
+d1 is placed at pin 100 (MC 9)
+s1in is placed at pin 99 (MC 10)
+poweronreset is placed at feedback node 610 (MC 10)
+d2 is placed at pin 98 (MC 11)
+s0in is placed at pin 97 (MC 12)
+cc1 is placed at feedback node 612 (MC 12)
+d3 is placed at pin 96 (MC 13)
+sync is placed at pin 94 (MC 14)
+cc2 is placed at feedback node 614 (MC 14)
+Com_Ctrl_226 is placed at foldback expander node 314 (MC 14)
+d4 is placed at pin 93 (MC 15)
+pi1 is placed at foldback expander node 315 (MC 15)
+ph2out is placed at pin 92 (MC 16)
+pi0 is placed at foldback expander node 316 (MC 16)
+cff2 is placed at feedback node 625 (MC 25)
+write_enabled is placed at feedback node 627 (MC 27)
+st3 is placed at pin 20 (MC 28)
+st1 is placed at pin 19 (MC 29)
+po14 is placed at pin 17 (MC 30)
+po13 is placed at pin 16 (MC 31)
+TMS is placed at pin 15 (MC 32)
+cff3 is placed at feedback node 632 (MC 32)
+fram_ce is placed at pin 42 (MC 35)
+addr10 is placed at pin 44 (MC 36)
+fram_oe is placed at pin 45 (MC 37)
+addr11 is placed at pin 46 (MC 38)
+addr9 is placed at pin 47 (MC 39)
+addr8 is placed at pin 48 (MC 40)
+addr13 is placed at pin 52 (MC 41)
+fram_wr is placed at pin 54 (MC 42)
+addr14out is placed at pin 56 (MC 43)
+addr12 is placed at pin 57 (MC 44)
+addr7 is placed at pin 58 (MC 45)
+addr6 is placed at pin 60 (MC 46)
+addr5 is placed at pin 61 (MC 47)
+TCK is placed at pin 62 (MC 48)
+pcw is placed at foldback expander node 348 (MC 48)
+addr4 is placed at pin 63 (MC 49)
+addr3 is placed at pin 64 (MC 50)
+addr2 is placed at pin 65 (MC 51)
+addr1 is placed at pin 67 (MC 52)
+addr0 is placed at pin 68 (MC 53)
+rxd is placed at pin 69 (MC 54)
+txd is placed at pin 71 (MC 55)
+TDO is placed at pin 73 (MC 56)
+cfg0in is placed at pin 75 (MC 57)
+int is placed at pin 76 (MC 58)
+d7 is placed at pin 79 (MC 59)
+rdy is placed at pin 80 (MC 60)
+d6 is placed at pin 81 (MC 61)
+ph1out is placed at pin 83 (MC 62)
+Com_Ctrl_226 is placed at foldback expander node 362 (MC 62)
+d5 is placed at pin 84 (MC 63)
+pi1 is placed at foldback expander node 363 (MC 63)
+cfg1in is placed at pin 85 (MC 64)
+pi0 is placed at foldback expander node 364 (MC 64)
+
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                             
+                                              c                                              
+                                    p         l   c   p                                      
+                                    h         k   f   h                                      
+                      s   s     s   2         3   g   1                                      
+                      1   0   G y   o V       M G 1   o V   r       i                        
+                    d i d i d N n d u C       h N i d u C d d d N N n                        
+                    1 n 2 n 3 D c 4 t C       z D n 5 t C 6 y 7 C C t                        
+                  ------------------------------------------------------                     
+                 / 100  98  96  94  92  90  88  86  84  82  80  78  76  \                   
+                /     99  97  95  93  91  89  87  85  83  81  79  77     \                  
+            NC | 1                                                     75 | cfg0in           
+            NC | 2                                                     74 | GND              
+           VCC | 3                                                     73 | TDO              
+           TDI | 4                                                     72 | NC               
+            NC | 5                                                     71 | txd              
+          s2in | 6                                                     70 | NC               
+            NC | 7                                                     69 | rxd              
+            d0 | 8                                                     68 | addr0            
+         reset | 9                                                     67 | addr1            
+           pi2 | 10                                                    66 | VCC              
+           GND | 11                                                    65 | addr2            
+           pi3 | 12                     ATF1504                        64 | addr3            
+           pi4 | 13                  100-Lead TQFP                     63 | addr4            
+          po12 | 14                                                    62 | TCK              
+           TMS | 15                                                    61 | addr5            
+          po13 | 16                                                    60 | addr6            
+          po14 | 17                                                    59 | GND              
+           VCC | 18                                                    58 | addr7            
+           st1 | 19                                                    57 | addr12           
+           st3 | 20                                                    56 | addr14out        
+               | 21                                                    55 | NC               
+            NC | 22                                                    54 | fram_wr          
+               | 23                                                    53 | NC               
+            NC | 24                                                    52 | addr13           
+               | 25                                                    51 | VCC              
+                \     27  29  31  33  35  37  39  41  43  45   47  49    /                   
+                 \  26  28  30  32  34  36  38  40  42  44  46  48   50 /                    
+                  ------------------------------------------------------                     
+                    G N N           V       G V     f G a f a a a  N N                       
+                    N C C           C       N C     r N d r d d d  C C                       
+                    D               C       D C     a D d a d d d                            
+                                                    m   r m r r r                            
+                                                    _   1 _ 1 9 8                            
+                                                    c   0 o 1                                
+                                                    e     e                                  
+
+
+
+VCC = Supply Voltage pin which must be connected to (5.0V or 3.0V)
+
+GND = GND pin which must be connected to ground
+
+TMS,TDI,TDO,TDI = JTAG pins which must reserved for the JTAG interface
+
+NC = Unused I/O pins which must be unconnected on the board
+
+Universal-Interconnect-Multiplexer assignments
+------------------------------------------------
+FanIn assignment for block A [25]
+{
+addr11,addr9,addr3,addr2,addr4,addr1,addr10,addr12,addr0,
+cc1,cff3,cff4,cff1,cc2,cff2,
+d7,d6,
+int,
+ph2out,
+rxd,
+s1in,s0in,s2in,sync,
+wren0,
+}
+Multiplexer assignment for block A
+addr11			(MC10	P)   : MUX 1		Ref (C38p)
+d7			(MC19	P)   : MUX 4		Ref (D59p)
+addr9			(MC11	P)   : MUX 5		Ref (C39p)
+int			(MC18	P)   : MUX 6		Ref (D58p)
+addr3			(MC14	P)   : MUX 7		Ref (D50p)
+s1in			(MC22	P)   : MUX 8		Ref (A10p)
+addr2			(MC15	P)   : MUX 9		Ref (D51p)
+s0in			(MC23	P)   : MUX 10		Ref (A12p)
+addr4			(MC13	P)   : MUX 11		Ref (D49p)
+addr1			(MC16	P)   : MUX 13		Ref (D52p)
+cc1			(MC4	FB)  : MUX 15		Ref (A12fb)
+cff3			(MC8	FB)  : MUX 17		Ref (B32fb)
+rxd			(MC25	P)   : MUX 21		Ref (D54p)
+cff4			(MC2	FB)  : MUX 22		Ref (A7fb)
+addr10			(MC9	P)   : MUX 23		Ref (C36p)
+addr12			(MC12	P)   : MUX 24		Ref (C44p)
+cff1			(MC1	FB)  : MUX 26		Ref (A5fb)
+s2in			(MC21	P)   : MUX 27		Ref (A7p)
+sync			(MC24	P)   : MUX 28		Ref (A14p)
+cc2			(MC5	FB)  : MUX 29		Ref (A14fb)
+ph2out			(MC6	P)   : MUX 30		Ref (A16p)
+addr0			(MC17	P)   : MUX 31		Ref (D53p)
+wren0			(MC3	FB)  : MUX 32		Ref (A8fb)
+d6			(MC20	P)   : MUX 36		Ref (D61p)
+cff2			(MC7	FB)  : MUX 39		Ref (B25fb)
+
+FanIn assignment for block B [22]
+{
+addr9,addr11,addr10,addr12,addr13,
+cc1,cff2,cff1,cc2,
+d1,d2,d7,d3,d4,d6,d5,
+ph2out,
+s1in,s0in,s2in,sync,
+wren0,
+}
+Multiplexer assignment for block B
+d1			(MC3	FB)  : MUX 3		Ref (A9fb)
+addr9			(MC13	P)   : MUX 5		Ref (C39p)
+s1in			(MC20	P)   : MUX 8		Ref (A10p)
+addr11			(MC12	P)   : MUX 9		Ref (C38p)
+s0in			(MC21	P)   : MUX 10		Ref (A12p)
+d2			(MC4	FB)  : MUX 11		Ref (A11fb)
+cc1			(MC5	FB)  : MUX 15		Ref (A12fb)
+d7			(MC16	FB)  : MUX 19		Ref (D59fb)
+cff2			(MC10	FB)  : MUX 21		Ref (B25fb)
+addr10			(MC11	P)   : MUX 23		Ref (C36p)
+addr12			(MC15	P)   : MUX 24		Ref (C44p)
+d3			(MC6	FB)  : MUX 25		Ref (A13fb)
+cff1			(MC1	FB)  : MUX 26		Ref (A5fb)
+s2in			(MC19	P)   : MUX 27		Ref (A7p)
+sync			(MC22	P)   : MUX 28		Ref (A14p)
+cc2			(MC7	FB)  : MUX 29		Ref (A14fb)
+ph2out			(MC9	P)   : MUX 30		Ref (A16p)
+d4			(MC8	FB)  : MUX 31		Ref (A15fb)
+addr13			(MC14	P)   : MUX 32		Ref (C41p)
+d6			(MC17	FB)  : MUX 33		Ref (D61fb)
+d5			(MC18	FB)  : MUX 35		Ref (D63fb)
+wren0			(MC2	FB)  : MUX 38		Ref (A8fb)
+
+FanIn assignment for block C [23]
+{
+addr13,
+cfg0in,cc1,cc2,cfg1in,
+d1,d2,d7,d3,d5,d0,d4,d6,
+fram_oe,
+int,
+ph2out,
+st1,s1in,s0in,s2in,sync,st3,
+write_enabled,
+}
+Multiplexer assignment for block C
+d1			(MC2	P)   : MUX 0		Ref (A9p)
+st1			(MC11	P)   : MUX 2		Ref (B29p)
+d2			(MC3	P)   : MUX 6		Ref (A11p)
+cfg0in			(MC22	P)   : MUX 8		Ref (D57p)
+cc1			(MC4	FB)  : MUX 9		Ref (A12fb)
+int			(MC14	P)   : MUX 10		Ref (D58p)
+s1in			(MC19	P)   : MUX 12		Ref (A10p)
+d7			(MC15	P)   : MUX 14		Ref (D59p)
+s0in			(MC20	P)   : MUX 16		Ref (A12p)
+fram_oe			(MC12	P)   : MUX 17		Ref (C37p)
+d3			(MC5	P)   : MUX 20		Ref (A13p)
+cc2			(MC6	FB)  : MUX 21		Ref (A14fb)
+cfg1in			(MC23	P)   : MUX 22		Ref (D64p)
+write_enabled		(MC9	FB)  : MUX 23		Ref (B27fb)
+d5			(MC17	P)   : MUX 24		Ref (D63p)
+d0			(MC1	P)   : MUX 25		Ref (A6p)
+d4			(MC7	P)   : MUX 26		Ref (A15p)
+s2in			(MC18	P)   : MUX 27		Ref (A7p)
+d6			(MC16	P)   : MUX 28		Ref (D61p)
+ph2out			(MC8	P)   : MUX 30		Ref (A16p)
+sync			(MC21	P)   : MUX 32		Ref (A14p)
+addr13			(MC13	P)   : MUX 34		Ref (C41p)
+st3			(MC10	P)   : MUX 36		Ref (B28p)
+
+FanIn assignment for block D [25]
+{
+addr11,addr6,addr9,addr5,addr7,addr12,addr0,addr10,
+cc1,cff3,cff4,cc2,
+d1,d2,d4,d0,d3,
+int,
+poweronreset,
+reset,
+s1in,st1,s0in,st3,s2in,
+}
+Multiplexer assignment for block D
+d1			(MC3	P)   : MUX 0		Ref (A9p)
+addr11			(MC14	P)   : MUX 1		Ref (C38p)
+addr6			(MC18	P)   : MUX 2		Ref (C46p)
+addr9			(MC15	P)   : MUX 5		Ref (C39p)
+d2			(MC5	P)   : MUX 6		Ref (A11p)
+poweronreset		(MC4	FB)  : MUX 7		Ref (A10fb)
+s1in			(MC24	P)   : MUX 8		Ref (A10p)
+int			(MC21	P)   : MUX 10		Ref (D58p)
+addr5			(MC19	P)   : MUX 12		Ref (C47p)
+st1			(MC11	P)   : MUX 14		Ref (B29p)
+cc1			(MC6	FB)  : MUX 15		Ref (A12fb)
+s0in			(MC25	P)   : MUX 16		Ref (A12p)
+cff3			(MC12	FB)  : MUX 17		Ref (B32fb)
+addr7			(MC17	FB)  : MUX 19		Ref (C45fb)
+d4			(MC9	P)   : MUX 20		Ref (A15p)
+reset			(MC22	P)   : MUX 21		Ref (A5p)
+st3			(MC10	P)   : MUX 22		Ref (B28p)
+addr12			(MC16	P)   : MUX 24		Ref (C44p)
+d0			(MC1	P)   : MUX 25		Ref (A6p)
+cff4			(MC2	FB)  : MUX 26		Ref (A7fb)
+s2in			(MC23	P)   : MUX 27		Ref (A7p)
+cc2			(MC8	FB)  : MUX 29		Ref (A14fb)
+addr0			(MC20	P)   : MUX 31		Ref (D53p)
+d3			(MC7	P)   : MUX 32		Ref (A13p)
+addr10			(MC13	P)   : MUX 35		Ref (C36p)
+
+Creating JEDEC file C:\USERS\JIM\DOCUMENTS\FAT8.jed ...
+
+TQFP100 programmed logic:
+-----------------------------------
+addr1.D = d1.PIN;
+
+addr0.D = d0.PIN;
+
+addr14out = ((cfg1in & addr13.Q)
+	# (cfg0in & !cfg1in & !addr13.Q)
+	# (!cfg0in & cfg1in));
+
+addr2.D = d2.PIN;
+
+addr3.D = d3.PIN;
+
+addr4.D = d4.PIN;
+
+addr5.D = d5.PIN;
+
+addr6.D = d6.PIN;
+
+addr7.D = d7.PIN;
+
+addr8.D = d0.PIN;
+
+addr9.D = d1.PIN;
+
+addr10.D = d2.PIN;
+
+addr11.D = d3.PIN;
+
+addr12.D = d4.PIN;
+
+addr13.D = d5.PIN;
+
+cc1.D = d6.PIN;
+
+cc2.D = d7.PIN;
+
+poweronreset.D = 1;
+
+ph2out = (!cff3.Q & cff4.Q);
+
+ph1out = (!cff3.Q & !cff4.Q);
+
+rdy = 1;
+
+txd.D = addr0.Q;
+
+wren0.D = addr0.Q;
+
+d4.D = addr4.Q;
+
+d1.D = addr1.Q;
+
+d2.D = addr2.Q;
+
+d3.D = addr3.Q;
+
+d5.D = addr5.Q;
+
+d6.D = addr6.Q;
+
+d7.D = addr7.Q;
+
+write_enabled = ((!addr11.Q & addr12.Q & !addr13.Q & d2.Q)
+	# (addr11.Q & addr12.Q & !addr13.Q & d3.Q)
+	# (!addr11.Q & !addr12.Q & addr13.Q & d4.Q)
+	# (addr11.Q & !addr12.Q & addr13.Q & d5.Q)
+	# (!addr11.Q & addr12.Q & addr13.Q & d6.Q)
+	# (addr11.Q & addr12.Q & addr13.Q & d7.Q)
+	# (!addr11.Q & !addr12.Q & !addr13.Q & wren0.Q)
+	# (addr11.Q & !addr12.Q & !addr13.Q & d1.Q));
+
+!cff1.T = (!cff1.Q & cff2.Q);
+
+!cff2.T = (!cff1.Q & !cff2.Q);
+
+cff3.T = (!cff1.Q & cff2.Q);
+
+!pcw = (cc1.Q & cc2.Q & s0in & !s1in & !s2in);
+
+cff4.T = (cff3.Q & !cff1.Q & cff2.Q);
+
+st1 = (ph2out & !sync & !s0in & s1in & !s2in);
+
+st3 = (ph2out & !sync & s0in & !s1in & !s2in);
+
+!fram_oe = (!cc1.Q & s0in & !s1in & !s2in);
+
+fram_ce = (fram_oe & pcw);
+
+!fram_wr = (st3 & !int.Q & write_enabled & cc1.Q & cc2.Q & s0in & !s1in & !s2in);
+
+!int.D = ((poweronreset.Q & reset & st3)
+	# (poweronreset.Q & reset & !int.Q));
+
+pi4 = (!addr9.Q & !addr10.Q & addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+!pi0 = (!addr9.Q & !addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+!pi1 = (addr9.Q & !addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+pi2 = (!addr9.Q & addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+pi3 = (addr9.Q & addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+po14 = (!addr9.Q & !addr10.Q & addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+po12 = (!addr9.Q & addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+po13 = (addr9.Q & addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d0 = ((!addr9.Q & !addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in & rxd)
+	# (wren0.Q & addr9.Q & !addr10.Q & !addr11.Q & !addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in));
+
+!Com_Ctrl_226 = (pi0 & pi1);
+
+addr1.C = st1;
+
+addr1.AR = int.Q;
+
+addr0.C = st1;
+
+addr0.AR = int.Q;
+
+addr2.C = st1;
+
+addr2.AR = int.Q;
+
+addr3.C = st1;
+
+addr3.AR = int.Q;
+
+addr4.C = st1;
+
+addr4.AR = int.Q;
+
+addr5.C = st1;
+
+addr5.AR = int.Q;
+
+addr6.C = st1;
+
+addr6.AR = int.Q;
+
+addr7.C = st1;
+
+addr7.AR = int.Q;
+
+addr8.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr8.AR = int.Q;
+
+addr9.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr9.AR = int.Q;
+
+addr10.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr10.AR = int.Q;
+
+addr11.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr11.AR = int.Q;
+
+addr12.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr12.AR = int.Q;
+
+addr13.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+addr13.AR = int.Q;
+
+cc1.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+cc1.AR = int.Q;
+
+cc2.C = (ph2out & !sync & !s0in & !s1in & s2in);
+
+cc2.AR = int.Q;
+
+poweronreset.C = (ph2out & !s0in & s1in & s2in & !sync);
+
+txd.C = (!addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+wren0.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d4.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d4.OE = Com_Ctrl_226;
+
+d1.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d1.OE = Com_Ctrl_226;
+
+d2.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d2.OE = Com_Ctrl_226;
+
+d3.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d3.OE = Com_Ctrl_226;
+
+d5.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d5.OE = Com_Ctrl_226;
+
+d6.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d6.OE = Com_Ctrl_226;
+
+d7.C = (addr9.Q & !addr10.Q & !addr11.Q & addr12.Q & cc1.Q & !cc2.Q & s0in & !s1in & !s2in);
+
+d7.OE = Com_Ctrl_226;
+
+cff1.C = clk3Mhz;
+
+cff2.C = clk3Mhz;
+
+cff3.C = clk3Mhz;
+
+cff4.C = clk3Mhz;
+
+int.C = clk3Mhz;
+
+d0.OE = Com_Ctrl_226;
+
+
+TQFP100 Pin/Node Placement:
+------------------------------------
+Pin 4  = TDI; /* MC 8 */
+Pin 6  = s2in; /* MC 7 */
+Pin 8  = d0; /* MC 6 */
+Pin 9  = reset; /* MC 5 */
+Pin 10 = pi2; /* MC  4 */
+Pin 12 = pi3; /* MC  3 */
+Pin 13 = pi4; /* MC  2 */
+Pin 14 = po12; /* MC  1 */
+Pin 15 = TMS; /* MC 32 */ 
+Pin 16 = po13; /* MC 31 */ 
+Pin 17 = po14; /* MC 30 */ 
+Pin 19 = st1; /* MC 29 */ 
+Pin 20 = st3; /* MC 28 */ 
+Pin 42 = fram_ce; /* MC 35 */ 
+Pin 44 = addr10; /* MC 36 */ 
+Pin 45 = fram_oe; /* MC 37 */ 
+Pin 46 = addr11; /* MC 38 */ 
+Pin 47 = addr9; /* MC 39 */ 
+Pin 48 = addr8; /* MC 40 */ 
+Pin 52 = addr13; /* MC 41 */ 
+Pin 54 = fram_wr; /* MC 42 */ 
+Pin 56 = addr14out; /* MC 43 */ 
+Pin 57 = addr12; /* MC 44 */ 
+Pin 58 = addr7; /* MC 45 */ 
+Pin 60 = addr6; /* MC 46 */ 
+Pin 61 = addr5; /* MC 47 */ 
+Pin 62 = TCK; /* MC 48 */ 
+Pin 63 = addr4; /* MC 49 */ 
+Pin 64 = addr3; /* MC 50 */ 
+Pin 65 = addr2; /* MC 51 */ 
+Pin 67 = addr1; /* MC 52 */ 
+Pin 68 = addr0; /* MC 53 */ 
+Pin 69 = rxd; /* MC 54 */ 
+Pin 71 = txd; /* MC 55 */ 
+Pin 73 = TDO; /* MC 56 */ 
+Pin 75 = cfg0in; /* MC 57 */ 
+Pin 76 = int; /* MC 58 */ 
+Pin 79 = d7; /* MC 59 */ 
+Pin 80 = rdy; /* MC 60 */ 
+Pin 81 = d6; /* MC 61 */ 
+Pin 83 = ph1out; /* MC 62 */ 
+Pin 84 = d5; /* MC 63 */ 
+Pin 85 = cfg1in; /* MC 64 */ 
+Pin 87 = clk3Mhz;
+Pin 92 = ph2out; /* MC 16 */ 
+Pin 93 = d4; /* MC 15 */ 
+Pin 94 = sync; /* MC 14 */ 
+Pin 96 = d3; /* MC 13 */ 
+Pin 97 = s0in; /* MC 12 */ 
+Pin 98 = d2; /* MC 11 */ 
+Pin 99 = s1in; /* MC 10 */ 
+Pin 100 = d1; /* MC  9 */
+PINNODE 314 = Com_Ctrl_226; /* MC 14 Foldback */
+PINNODE 315 = pi1; /* MC 15 Foldback */
+PINNODE 316 = pi0; /* MC 16 Foldback */
+PINNODE 348 = pcw; /* MC 48 Foldback */
+PINNODE 362 = Com_Ctrl_226; /* MC 62 Foldback */
+PINNODE 363 = pi1; /* MC 63 Foldback */
+PINNODE 364 = pi0; /* MC 64 Foldback */
+PINNODE 605 = cff1; /* MC 5 Feedback */
+PINNODE 607 = cff4; /* MC 7 Feedback */
+PINNODE 608 = wren0; /* MC 8 Feedback */
+PINNODE 610 = poweronreset; /* MC 10 Feedback */
+PINNODE 612 = cc1; /* MC 12 Feedback */
+PINNODE 614 = cc2; /* MC 14 Feedback */
+PINNODE 625 = cff2; /* MC 25 Feedback */
+PINNODE 627 = write_enabled; /* MC 27 Feedback */
+PINNODE 632 = cff3; /* MC 32 Feedback */
+
+** Resource Usage **
+
+
+DCERP Field = Summary of Allocations.
+|||||
+|||||_Preset [p,-]       ==  p = PT preset, - No Preset.
+||||
+||||__Reset [g,r,-]      ==  g= Global AR, r = PT reset, - No reset.
+|||
+|||___Clock Enable [e,-] ==  e = Product Term, - always enabled, - none.
+||
+||____Clock [c,g,-],     ==  c = Product term, g = Global term, - No Clock.
+|
+|_____Type [C,D,L,T],    ==  Register type C= combin, D=dff, L=latch, T=tff.
+
+For input only = INPUT.
+
+MCell Pin# Oe   PinDrive  DCERP  FBDrive       DCERP  Foldback     CascadeOut       TotPT output_slew
+MC1   14   on   po12      C----  --                   --           --               1     slow
+MC2   13   on   pi4       C----  --                   --           --               1     slow
+MC3   12   on   pi3       C----  --                   --           --               1     slow
+MC4   10   on   pi2       C----  --                   --           --               1     slow
+MC5   9    --   reset     INPUT  cff1          Tg---  --           --               1     slow
+MC6   8    PT   d0        C----  --                   --           --               3     slow
+MC7   6    --   s2in      INPUT  cff4          Tg---  --           --               1     slow
+MC8   4    --   TDI       INPUT  wren0         Dc---  --           --               2     slow
+MC9   100  PT   d1        Dc---  --                   --           --               3     slow
+MC10  99   --   s1in      INPUT  poweronreset  Dc---  --           --               1     slow
+MC11  98   PT   d2        Dc---  --                   --           --               3     slow
+MC12  97   --   s0in      INPUT  cc1           Dc-r-  --           --               3     slow
+MC13  96   PT   d3        Dc---  --                   --           --               3     slow
+MC14  94   --   sync      INPUT  cc2           Dc-r-  Com_Ctrl_226 --               4     slow
+MC15  93   PT   d4        Dc---  --                   pi1          --               4     slow
+MC16  92   on   ph2out    C----  --                   pi0          --               2     slow
+MC17  37        --               --                   --           --               0     slow
+MC18  36        --               --                   --           --               0     slow
+MC19  35        --               --                   --           --               0     slow
+MC20  33        --               --                   --           --               0     slow
+MC21  32        --               --                   --           --               0     slow
+MC22  31        --               --                   --           --               0     slow
+MC23  30        --               --                   --           --               0     slow
+MC24  29        --               --                   --           --               0     slow
+MC25  25        --               cff2          Tg---  --           --               1     slow
+MC26  23        --               --                   --           -> write_enabled 5     slow
+MC27  21        --               write_enabled C----  --           --               3     slow
+MC28  20   on   st3       C----  --                   --           --               1     slow
+MC29  19   on   st1       C----  --                   --           --               1     slow
+MC30  17   on   po14      C----  --                   --           --               1     slow
+MC31  16   on   po13      C----  --                   --           --               1     slow
+MC32  15   --   TMS       INPUT  cff3          Tg---  --           --               1     slow
+MC33  40        --               --                   --           --               0     slow
+MC34  41        --               --                   --           --               0     slow
+MC35  42   on   fram_ce   C----  --                   --           --               1     slow
+MC36  44   on   addr10    Dc-r-  --                   --           --               3     slow
+MC37  45   on   fram_oe   C----  --                   --           --               1     slow
+MC38  46   on   addr11    Dc-r-  --                   --           --               3     slow
+MC39  47   on   addr9     Dc-r-  --                   --           --               3     slow
+MC40  48   on   addr8     Dc-r-  --                   --           --               3     slow
+MC41  52   on   addr13    Dc-r-  --                   --           --               3     slow
+MC42  54   on   fram_wr   C----  --                   --           --               1     slow
+MC43  56   on   addr14out C----  --                   --           --               3     slow
+MC44  57   on   addr12    Dc-r-  --                   --           --               3     slow
+MC45  58   on   addr7     Dc-r-  --                   --           --               3     slow
+MC46  60   on   addr6     Dc-r-  --                   --           --               3     slow
+MC47  61   on   addr5     Dc-r-  --                   --           --               3     slow
+MC48  62   --   TCK       INPUT  --                   pcw          --               1     slow
+MC49  63   on   addr4     Dc-r-  --                   --           --               3     slow
+MC50  64   on   addr3     Dc-r-  --                   --           --               3     slow
+MC51  65   on   addr2     Dc-r-  --                   --           --               3     slow
+MC52  67   on   addr1     Dc-r-  --                   --           --               3     slow
+MC53  68   on   addr0     Dc-r-  --                   --           --               3     slow
+MC54  69   --   rxd       INPUT  --                   --           --               0     slow
+MC55  71   on   txd       Dc---  --                   --           --               2     slow
+MC56  73   --   TDO       INPUT  --                   --           --               0     slow
+MC57  75   --   cfg0in    INPUT  --                   --           --               0     slow
+MC58  76   on   int       Dg---  --                   --           --               2     slow
+MC59  79   PT   d7        Dc---  --                   --           --               3     slow
+MC60  80   on   rdy       C----  --                   --           --               0     slow
+MC61  81   PT   d6        Dc---  --                   --           --               3     slow
+MC62  83   on   ph1out    C----  --                   Com_Ctrl_226 --               2     slow
+MC63  84   PT   d5        Dc---  --                   pi1          --               4     slow
+MC64  85   --   cfg1in    INPUT  --                   pi0          --               1     slow
+MC0   90        --               --                   --           --               0     slow
+MC0   89        --               --                   --           --               0     slow
+MC0   88        --               --                   --           --               0     slow
+MC0   87        clk3Mhz   INPUT  --                   --           --               0     slow
+
+Logic Array Block	Logic Cells	I/O Pins	Foldbacks	TotalPT		FanIN	Cascades
+A: LC1	- LC16		16/16(100%)	16/16(100%)	3/16(18%)	34/80(42%)	(25)	0
+B: LC17	- LC32		7/16(43%)	5/16(31%)	0/16(0%)	14/80(17%)	(22)	1
+C: LC33	- LC48		13/16(81%)	14/16(87%)	1/16(6%)	34/80(42%)	(23)	0
+D: LC49	- LC64		12/16(75%)	16/16(100%)	3/16(18%)	32/80(40%)	(25)	0
+
+Total dedicated input used:	1/4 	(25%)
+Total I/O pins used		51/64 	(79%)
+Total Logic cells used 		49/64 	(76%)
+Total Flip-Flop used 		31/64 	(48%)
+Total Foldback logic used 	7/64 	(10%)
+Total Nodes+FB/MCells 		55/64 	(85%)
+Total cascade used 		1
+Total input pins 		13
+Total output pins 		39
+Total Pts 			114
+Creating pla file C:\USERS\JIM\DOCUMENTS\FAT8.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+
+----------------  End fitter, Design FITS
+$Device TQFP100 fits 
+FIT1504 completed in 0.00 seconds

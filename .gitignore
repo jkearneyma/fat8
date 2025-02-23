@@ -1,0 +1,6 @@
+software/*.lst
+software/*.map
+software/*.p
+hardware/fat8-backups/
+hardware/fp-info-cache
+hardware/fat8-*.png

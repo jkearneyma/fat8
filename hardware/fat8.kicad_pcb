@@ -100,7 +100,6 @@
 			(psnegative no)
 			(psa4output no)
 			(plot_black_and_white yes)
-			(plotinvisibletext no)
 			(sketchpadsonfab no)
 			(plotpadnumbers no)
 			(hidednponfab no)
@@ -6635,7 +6634,7 @@
 			(uuid "c0813ce8-42a8-4246-93ba-e2365deb600c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/dcp020509u.wrl"
+		(model "${KIPRJMOD}/3d/dcp020509u.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8963,7 +8962,7 @@
 			(uuid "e1532dbf-49de-4c4c-ad40-21d24b0b7c94")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ftsh-105-01-l-dv-k.wrl"
+		(model "${KIPRJMOD}/3d/ftsh-105-01-l-dv-k.wrl"
 			(offset
 				(xyz 0 0 1.700000004)
 			)
@@ -9622,7 +9621,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/c8008.wrl"
+		(model "${KIPRJMOD}/3d/c8008.wrl"
 			(offset
 				(xyz 2.54 -11.43 1.143)
 			)
@@ -9880,19 +9879,7 @@
 			(uuid "a97768db-3e53-4c12-b75c-e69ac1af720d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KMR2.wrl"
-			(hide yes)
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-		(model "${KIPRJMOD}/KMR241GLFS.wrl"
+		(model "${KIPRJMOD}/3d/KMR241GLFS.wrl"
 			(offset
 				(xyz 0 -0.1016 0.889)
 			)

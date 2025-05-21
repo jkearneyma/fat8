@@ -5,7 +5,7 @@ This is not pure vintage design, rather its intent is to keep the flavor of one 
 
 ![render of fat8](hardware/fat8.png)
 
-- 8008 CPU running at ~ 50K instructions per second.
+- 8008 CPU running at ~ 50K instructions per second (500 KHz clock).
 - 32KB of nonvolatile RAM (16KB addressable at a time)
 - Connects to a PC as a USB serial terminal
 - 3 input and 3 output ports available on an expansion connector
